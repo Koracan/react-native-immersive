@@ -51,14 +51,14 @@ export class RNImmersiveModule extends AnyThreadTurboModule implements TM.RNImme
     // 2. 设置沉浸式状态
     try {
       if (on) {
-        // 开启沉浸式：隐藏系统，不处理全屏
+        // 开启沉浸式：隐藏系统栏，
         await win.setWindowSystemBarEnable([]);
-        // await win.setFullScreen(true);
+        await win.setFullScreen(true);
         console.log('[RNImmersive] Immersive mode enabled');
       } else {
-        // 关闭沉浸式：显示系统栏，不处理全屏
+        // 关闭沉浸式：显示系统栏
+        await win.setFullScreen(true); // 无论如何都开启全屏；先开启全屏再开启 bar，否则 status 不显示
         await win.setWindowSystemBarEnable(['status', 'navigation']);
-        // await win.setFullScreen(false);
         console.log('[RNImmersive] Immersive mode disabled');
       }
     } catch (error: any) {

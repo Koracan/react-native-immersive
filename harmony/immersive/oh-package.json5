@@ -8,6 +8,6 @@
   "main": "ts.ts",
   "version": "2.1.0-rc.1",
   "dependencies": {
-    "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony.har"
   }
 }
